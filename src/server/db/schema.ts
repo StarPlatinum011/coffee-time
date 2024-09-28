@@ -18,7 +18,7 @@ import {
  */
 export const createTable = pgTableCreator((name) => `coffee-time_${name}`);
 
-export const pimage = createTable(
+export const image = createTable(
   "image",
   {
     id: serial("id").primaryKey(),
