@@ -7,11 +7,11 @@
 - [X] Set up Database
 - [X] Attach database to UI
 - [X] Add Authentication 
-- [ ] Add image upload
-- [ ] "Taint" (server only)
-- [ ] Use Next Image component
+- [X] Add image upload
+- [X] "Taint" (server only)
+- [X] Use Next Image component
+- [ ] Error management (w/sentry)
 - [ ] Routing/image page (parallel route)
 - [ ] Delete btn with server actions
 - [ ] Analytics (Posthog)
 - [ ] Rate limiting (upstash)
-- [ ] Error management (w/sentry)
