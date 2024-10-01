@@ -1,6 +1,6 @@
 import "~/styles/globals.css";
 import "@uploadthing/react/styles.css";
-import { ClerkProvider } from '@clerk/nextjs'
+import { ClerkProvider } from "@clerk/nextjs";
 import { type Metadata } from "next";
 import TopNav from "./_components/topnav";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
@@ -13,15 +13,16 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-
-
 export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+  children, modal
+}: Readonly<{ 
+  children: React.ReactNode;
+  modal: React.ReactNode;
+}>) {
   return (
     <ClerkProvider>
       <html lang="en">
-      <NextSSRPlugin
+        <NextSSRPlugin
           /**
            * The `extractRouterConfig` will extract **only** the route configs
            * from the router to prevent additional information from being
@@ -30,9 +31,12 @@ export default function RootLayout({
            */
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
-        <body className={`font-sans flex-col gap-4`}>
-          <TopNav/>
+        <body className={`flex-col gap-4 font-sans`}>
+          <TopNav />
           {children}
+          {modal}
+          <div id="modal-root" />
+
         </body>
       </html>
     </ClerkProvider>

@@ -1,15 +1,16 @@
 ## T3 Coffee Time
 
 ## TODO
-- [X] Make it deploy
-- [X] Scaffold basic ui with mock data  
-- [X] Tidy up build
-- [X] Set up Database
-- [X] Attach database to UI
-- [X] Add Authentication 
-- [X] Add image upload
-- [X] "Taint" (server only)
-- [X] Use Next Image component
+
+- [x] Make it deploy
+- [x] Scaffold basic ui with mock data
+- [x] Tidy up build
+- [x] Set up Database
+- [x] Attach database to UI
+- [x] Add Authentication
+- [x] Add image upload
+- [x] "Taint" (server only)
+- [x] Use Next Image component
 - [ ] Error management (w/sentry)
 - [ ] Routing/image page (parallel route)
 - [ ] Delete btn with server actions

@@ -6,7 +6,6 @@ import { image } from "~/server/db/schema";
 
 const f = createUploadthing();
 
-
 // FileRouter for your app, can contain multiple FileRoutes
 export const ourFileRouter = {
   // Define as many FileRoutes as you like, each with a unique routeSlug
@@ -14,12 +13,11 @@ export const ourFileRouter = {
     // Set permissions and file types for this FileRoute
     .middleware(async ({ req }) => {
       // This code runs on your server before upload
-      const user =  auth();
+      const user = auth();
 
       // If you throw, the user will not be able to upload
       // if (!user.userId) throw new UploadThingError("Unauthorized");
       if (!user.userId) throw new Error("Unauthorized");
-
 
       // Whatever is returned here is accessible in onUploadComplete as `metadata`
       return { userId: user.userId };
@@ -28,12 +26,12 @@ export const ourFileRouter = {
       // This code RUNS ON YOUR SERVER after upload
       console.log("Upload complete for userId:", metadata.userId);
 
-      //inserting the data into database 
+      //inserting the data into database
       await db.insert(image).values({
         name: file.name,
-        url: file.url, 
-        userId: metadata.userId
-      })
+        url: file.url,
+        userId: metadata.userId,
+      });
       // !!! Whatever is returned here is sent to the clientside `onClientUploadComplete` callback
       return { uploadedBy: metadata.userId };
     }),
