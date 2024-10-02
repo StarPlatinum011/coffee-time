@@ -6,12 +6,18 @@ import TopNav from "./_components/topnav";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
+import { Inter } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Coffee Time",
   description: "I learn NextJs while drinking coffee",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export default function RootLayout({
   children, modal
@@ -31,9 +37,14 @@ export default function RootLayout({
            */
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
-        <body className={`flex-col gap-4 font-sans`}>
-          <TopNav />
-          {children}
+        <body className={`font-sans ${inter.variable}`}>
+          <div className=" grid h-screen  grid-rows-[auto,1fr]">
+            <TopNav />
+            <main className="overflow-y-scroll">
+              {children}
+            </main>
+            
+          </div>
           {modal}
           <div id="modal-root" />
 

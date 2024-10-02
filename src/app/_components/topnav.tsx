@@ -8,7 +8,7 @@ export default function TopNav() {
   const router = useRouter();
 
   return (
-    <nav className="flex items-center justify-between border-b p-4 text-xl font-semibold">
+    <nav className="flex items-center  justify-between border-b p-4 text-xl font-semibold">
       <Link href={'/'}><div> Vagabond Gallery</div></Link>
       <div className="flex">
         <SignedOut>
