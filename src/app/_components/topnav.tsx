@@ -2,25 +2,25 @@
 
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { UploadButton } from "~/utils/uploadthing";
+import { SimpleUploadButton } from "./simple-upload-btn";
 export default function TopNav() {
-  const router = useRouter();
 
   return (
     <nav className="flex items-center  justify-between border-b p-4 text-xl font-semibold">
       <Link href={'/'}><div> Vagabond Gallery</div></Link>
-      <div className="flex">
+      <div className="flex gap-4 items-center">
         <SignedOut>
           <SignInButton />
         </SignedOut>
         <SignedIn>
-          <UploadButton
+          {/* <UploadButton
             endpoint="imageUploader" //name of the endpoint in core.ts
             onClientUploadComplete={() => {
               router.refresh();
             }} //auto reload on image upload
-          />
+          /> */}
+
+          <SimpleUploadButton/>
           <UserButton />
         </SignedIn>
       </div>
