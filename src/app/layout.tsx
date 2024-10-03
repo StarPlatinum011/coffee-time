@@ -38,7 +38,7 @@ export default function RootLayout({
            */
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
-        <body className={`font-sans ${inter.variable} dark`}>
+        <body className={`font-sans ${inter.variable}`}>
           <div className=" grid h-screen  grid-rows-[auto,1fr]">
             <TopNav />
             <main className="overflow-y-scroll">
@@ -48,7 +48,13 @@ export default function RootLayout({
           </div>
           {modal}
           <div id="modal-root" />
-          <Toaster/>
+          <Toaster
+          toastOptions={{
+            style: {
+              background: 'white',
+              color: 'black'
+            }
+          }}/>
         </body>
       </html>
     </ClerkProvider>
