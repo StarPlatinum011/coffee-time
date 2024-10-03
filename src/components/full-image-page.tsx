@@ -10,9 +10,9 @@ export default async function FullPageImageView(props: { id: number }) {
   console.log(uploaderInfo.fullName)
 
   return(
-    <div className='flex h-full w-full min-w-0'>
+    <div className='flex h-full w-full min-w-0 p-4'>
         <div className='flex-shrink flex-grow'>
-            <img src={image.url} alt={image.name} className='object-contain h-full w-full'/>
+            <img src={image.url} alt={image.name} className='object-contain h-full w-full '/>
         </div>
 
         <div className='flex flex-col w-48 flex-shrink-0 border-l'>
