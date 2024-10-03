@@ -7,6 +7,7 @@ import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
 import { Inter } from "next/font/google";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Coffee Time",
@@ -37,7 +38,7 @@ export default function RootLayout({
            */
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
-        <body className={`font-sans ${inter.variable}`}>
+        <body className={`font-sans ${inter.variable} dark`}>
           <div className=" grid h-screen  grid-rows-[auto,1fr]">
             <TopNav />
             <main className="overflow-y-scroll">
@@ -47,7 +48,7 @@ export default function RootLayout({
           </div>
           {modal}
           <div id="modal-root" />
-
+          <Toaster/>
         </body>
       </html>
     </ClerkProvider>
