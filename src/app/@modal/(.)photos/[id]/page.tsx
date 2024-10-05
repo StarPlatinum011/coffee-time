@@ -7,8 +7,8 @@ export default  function PhotoModal({
   params: { id: string };
 }) {
 
-  const idAsNum = Number(photoId)
-  if (Number.isNaN(idAsNum)) throw new Error('Invalid photo id');
+  // const idAsNum = Number(photoId)
+  // if (Number.isNaN(idAsNum)) throw new Error('Invalid photo id');
 
-  return <Modal><FullPageImageView id={idAsNum}/></Modal>;
+  return <Modal><FullPageImageView photoId={photoId}/></Modal>;
 }
